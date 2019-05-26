@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Wumvi\JsonRpc;
 
-abstract class ModelResponse implements \JsonSerializable
+class ModelResponse implements \JsonSerializable
 {
     private $errorMsg = '';
     private $errorCode = '';
@@ -23,5 +23,10 @@ abstract class ModelResponse implements \JsonSerializable
     public function getErrorCode(): string
     {
         return $this->errorCode;
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->raw;
     }
 }
