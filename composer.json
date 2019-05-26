@@ -11,7 +11,8 @@
     "php": "~7.1",
     "symfony/dependency-injection": "@stable",
     "symfony/config": "^4.2",
-    "ext-json": "*"
+    "ext-json": "*",
+    "symfony/yaml": "^4.2"
   },
   "require-dev": {
     "phpunit/phpunit": "@stable",
