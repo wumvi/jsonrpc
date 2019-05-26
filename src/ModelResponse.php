@@ -3,10 +3,11 @@ declare(strict_types=1);
 
 namespace Wumvi\JsonRpc;
 
-abstract class ModelOut implements \JsonSerializable
+abstract class ModelResponse implements \JsonSerializable
 {
     private $errorMsg = '';
     private $errorCode = '';
+    protected $raw = [];
 
     public function setError(string $code, string $msg): void
     {

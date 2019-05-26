@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use Wumvi\JsonRpc\ModelOut;
+use Wumvi\JsonRpc\ModelResponse;
 
-class ModelResponse extends ModelOut
+class ModelResponse extends ModelResponse
 {
     /**
      * @var string

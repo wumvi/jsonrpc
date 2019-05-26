@@ -73,7 +73,7 @@ class Init
         array $routes,
         ContainerBuilder $di,
         callable $beforeRequest = null
-    ): ?ModelOut {
+    ): ?ModelResponse {
         if (!array_key_exists($call->getMethod(), $routes)) {
             $name = htmlspecialchars($call->getMethod());
             throw new \Exception(
