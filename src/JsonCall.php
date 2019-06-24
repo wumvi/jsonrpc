@@ -11,6 +11,13 @@ class JsonCall
     public const PARAMS = 'params';
     private $json = [];
 
+    /**
+     * JsonCall constructor.
+     *
+     * @param array $json
+     *
+     * @throws \Exception
+     */
     public function __construct(array $json)
     {
         if (!array_key_exists(JsonCall::METHOD, $json)) {

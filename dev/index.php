@@ -14,6 +14,7 @@ function checkSession(ModelSession $model, $di): ?ModelError
 {
     $error = new ModelError();
     $error->setError('wrong-session', 'Wrong session ' . $model->getSession());
+
     return $error;
 }
 

@@ -59,12 +59,13 @@ class Init
     }
 
     /**
-     * @param JsonCall $call
-     * @param array $routes
-     * @param ContainerBuilder $di
-     * @param callable $beforeRequest
+     * @param JsonCall $call Модель с параметрами вызова
+     * @param array $routes Массив роутев
+     * @param ContainerBuilder $di DI
+     * @param callable $beforeRequest Callback Вызывается перед запросом.
+     *  Должен вернуть или \Wumvi\JsonRpc\ModelResponse или null
      *
-     * @return \JsonSerializable|null
+     * @return \JsonSerializable|null Ответ по запросу
      *
      * @throws \Exception
      */
@@ -127,6 +128,15 @@ class Init
         return $result;
     }
 
+    /**
+     * Формирует ошибку
+     *
+     * @param string $msg Сообщение об ошибке
+     * @param string $code Код ошибки
+     * @param string|null $id ID запроса, если есть
+     *
+     * @return array Данные об ошибке
+     */
     public static function makeErrorResult(string $msg, string $code, ?string $id): array
     {
         return [
@@ -139,7 +149,16 @@ class Init
         ];
     }
 
-
+    /**
+     * @param array $routes Массив роутов
+     * @param ContainerBuilder $di DI
+     * @param string $requestMethod Вызываемый метод
+     * @param string $requestData Данные запроса
+     * @param callable|null $beforeRequest Callback Вызывается перед запросом.
+     *      Должен вернуть или \Wumvi\JsonRpc\ModelResponse или null
+     *
+     * @return string Результат запрос
+     */
     public static function getResponseJson(
         array $routes,
         ContainerBuilder $di,
