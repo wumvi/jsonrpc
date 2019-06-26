@@ -109,10 +109,10 @@ class Init
         $settings = $route[SETTINGS] ?? null;
         $result = null;
         if ($beforeRequest) {
-            $result = $beforeRequest(new $model($call->getParams()), $di, $settings);
+            $result = $beforeRequest($di, new $model($call->getParams()), $settings);
         }
         if ($result === null) {
-            $result = $controller->$method(new $model($call->getParams()), $di, $settings);
+            $result = $controller->$method($di, new $model($call->getParams()), $settings);
         }
         if ($result === null) {
             return null;

@@ -17,7 +17,7 @@
 ### Clone
 Clone the repo to a directory
 ```
-git clone https://github.com/wumvi/core.http.git
+git clone https://github.com/wumvi/jsonrpc
 ```
 
 ### Composer update
